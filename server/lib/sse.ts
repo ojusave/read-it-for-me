@@ -1,0 +1,32 @@
+import type { Response } from "express";
+
+export function writeSse(res: Response, event: string, data: unknown): void {
+  res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+}
+
+export function beginSse(res: Response): void {
+  res.writeHead(200, {
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    Connection: "keep-alive",
+    "X-Accel-Buffering": "no",
+  });
+  res.flushHeaders();
+  res.write(":ok\n\n");
+}
+
+export async function streamSse(
+  res: Response,
+  generator: AsyncGenerator<{ event: string; data: unknown }>
+): Promise<void> {
+  beginSse(res);
+  try {
+    for await (const chunk of generator) {
+      writeSse(res, chunk.event, chunk.data);
+    }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    writeSse(res, "error", { message });
+  }
+  res.end();
+}

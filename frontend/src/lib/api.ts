@@ -1,0 +1,82 @@
+import type {
+  DigestResult,
+  ItemAnalysis,
+  SseCardPayload,
+  SseDonePayload,
+  SseErrorPayload,
+  SseStatusPayload,
+} from "../../../shared/types";
+
+export type AppConfig = {
+  githubRepo: string;
+  deployUrl: string;
+  signupNavbar: string;
+  signupHero: string;
+  signupFooter: string;
+};
+
+export async function loadConfig(): Promise<AppConfig> {
+  const res = await fetch("/api/config");
+  if (!res.ok) throw new Error("Failed to load config");
+  return res.json();
+}
+
+export type DigestStreamHandlers = {
+  onStatus: (payload: SseStatusPayload) => void;
+  onCard: (payload: SseCardPayload) => void;
+  onDone: (payload: SseDonePayload) => void;
+  onError: (payload: SseErrorPayload) => void;
+};
+
+/** POST multipart form and parse SSE response manually. */
+export async function runDigestStream(
+  form: FormData,
+  handlers: DigestStreamHandlers
+): Promise<void> {
+  const res = await fetch("/api/digest", { method: "POST", body: form });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    handlers.onError({ message: body.error ?? `Request failed (${res.status})` });
+    return;
+  }
+  if (!res.body) {
+    handlers.onError({ message: "No response stream" });
+    return;
+  }
+
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    buffer = consumeSse(buffer, handlers);
+  }
+}
+
+function consumeSse(buffer: string, handlers: DigestStreamHandlers): string {
+  const parts = buffer.split("\n\n");
+  const rest = parts.pop() ?? "";
+
+  for (const part of parts) {
+    if (!part.trim() || part.startsWith(":")) continue;
+    let event = "message";
+    let data = "";
+    for (const line of part.split("\n")) {
+      if (line.startsWith("event:")) event = line.slice(6).trim();
+      if (line.startsWith("data:")) data += line.slice(5).trim();
+    }
+    if (!data) continue;
+    const payload = JSON.parse(data);
+    if (event === "status") handlers.onStatus(payload);
+    else if (event === "card") handlers.onCard(payload);
+    else if (event === "done") handlers.onDone(payload);
+    else if (event === "error") handlers.onError(payload);
+  }
+
+  return rest;
+}
+
+export type { ItemAnalysis, DigestResult };
