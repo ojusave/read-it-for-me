@@ -4,7 +4,7 @@
 
 Personal daily digest for links, pasted text, and PDFs. Each item answers what changed, why it matters, what to do, and whether it is worth reading fully.
 
-[Live demo](https://read-it-for-me.onrender.com/) · [Deploy on Render](https://render.com/deploy) · [Repository](https://github.com/ojusave/read-it-for-me)
+[Live demo](https://read-it-for-me.onrender.com/) · [Deploy on Render](https://render.com/deploy)
 
 Built with [<img src="static/images/icons/svelte.svg" alt="" height="16" /> Svelte 5](https://svelte.dev/), [<img src="static/images/icons/express.svg" alt="" height="16" /> Express](https://expressjs.com/), [<img src="static/images/icons/render.svg" alt="" height="16" /> Render Workflows](https://render.com/docs/workflows), and [<img src="static/images/icons/postgresql.svg" alt="" height="16" /> Render Postgres](https://render.com/docs/postgresql).
 
