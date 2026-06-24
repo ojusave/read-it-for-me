@@ -72,14 +72,6 @@
           Drop in links, pasted text, or PDFs. Each item answers what changed, why it
           matters, what to do, and whether it is worth reading fully.
         </p>
-        <div class="hero-actions">
-          <a class="btn" href={config.deployUrl} target="_blank" rel="noopener noreferrer">
-            Deploy to Render
-          </a>
-          <a class="btn" href={config.signupHero} target="_blank" rel="noopener noreferrer">
-            Sign up on Render
-          </a>
-        </div>
       </section>
 
       <section class="panel">
@@ -120,7 +112,7 @@
       {/if}
     </main>
 
-    <Footer githubRepo={config.githubRepo} signupUrl={config.signupFooter} />
+    <Footer githubRepo={config.githubRepo} />
   {:else if error}
     <main class="shell"><p class="error">{error}</p></main>
   {:else}
