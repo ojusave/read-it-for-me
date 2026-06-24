@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Read It For Me — Digest Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet"/>
+<style>
+  html,body{margin:0;padding:0;background:#0b0d14;}
+  .stage{width:1600px;}
+  svg.diagram{display:block;width:1600px;height:auto}
+</style>
+</head>
+<body>
+<div class="stage">
+  <svg class="diagram" viewBox="0 0 1600 640" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="pRender" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b80ff"/></marker>
+      <marker id="pSky" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#45b6f5"/></marker>
+      <marker id="pPg" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6ea8ff"/></marker>
+
+      <symbol id="tg" viewBox="0 0 64 64">
+        <circle cx="19" cy="21" r="12.5" fill="#c9b6f2"/>
+        <circle cx="45" cy="21" r="12.5" fill="#ec4fc4"/>
+        <circle cx="32" cy="44" r="12.5" fill="#ff4d00"/>
+        <line x1="19" y1="21" x2="25" y2="32" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="45" y1="21" x2="34" y2="21" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="32" y1="44" x2="39" y2="33" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="rndr" viewBox="0 0 24 24"><path fill="#ffffff" d="m17.1491 1.50583c-2.6812-.1262-4.9358 1.81264-5.3205 4.36717-.0152.11854-.0381.23327-.0571.34799-.5979 3.18169-3.38195 5.59091-6.7258 5.59091-1.19206 0-2.31175-.3059-3.28672-.8413-.11807-.065-.25898.0191-.25898.1529v.6846 10.3137h10.2677v-7.7324c0-1.4226 1.1501-2.5775 2.5669-2.5775h2.5669c2.9059 0 5.2443-2.42069 5.13-5.36528-.1028-2.65013-2.2431-4.8146-4.8824-4.94079z"/></symbol>
+
+      <style><![CDATA[
+        text{font-family:Inter,"Helvetica Neue",Arial,sans-serif;}
+        .h1{font-size:30px;font-weight:700;fill:#f4f4f8}
+        .h2{font-size:15px;font-weight:400;fill:#9b9bab}
+        .band{font-size:13px;font-weight:700;letter-spacing:0.16em;fill:#a99fff}
+        .step{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:16px;font-weight:600;fill:#f0f0f5}
+        .kicker{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;fill:#7d8294}
+        .desc{font-size:12.5px;font-weight:400;fill:#9b9bab}
+        .note{font-size:10.5px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;fill:#7d8294}
+        .edge{font-size:11.5px;font-weight:500;fill:#aeb0bd}
+        .foot{font-size:13px;font-weight:400;fill:#9b9bab}
+        @keyframes flow { to { stroke-dashoffset:-20; } }
+        .flow{stroke-dasharray:6 6;animation:flow 1.4s linear infinite;}
+      ]]></style>
+    </defs>
+
+    <rect x="0" y="0" width="1600" height="640" fill="#0b0d14"/>
+
+    <text x="44" y="50" class="h1">Read It For Me — Digest Pipeline</text>
+    <text x="44" y="78" class="h2">Express dispatches each task to Render Workflows and streams status + cards back to the browser over SSE</text>
+
+    <!-- Render Workflows band over steps 2–4 -->
+    <g>
+      <rect x="352" y="120" width="886" height="34" rx="9" fill="#15132c" stroke="#3a3566"/>
+      <use href="#rndr" x="372" y="125" width="22" height="22"/>
+      <text x="406" y="142" class="band">RENDER WORKFLOWS</text>
+      <text x="640" y="142" class="desc" style="fill:#8b86a8">each task isolated · own timeout &amp; retries · dashboard replay</text>
+    </g>
+
+    <!-- connector ticks from band to step cards -->
+    <g stroke="#3a3566" stroke-width="1.4">
+      <line x1="487" y1="154" x2="487" y2="196"/>
+      <line x1="795" y1="154" x2="795" y2="196"/>
+      <line x1="1103" y1="154" x2="1103" y2="196"/>
+    </g>
+
+    <!-- ===== STEP CARDS ===== -->
+    <!-- 1: Submit (browser) -->
+    <g transform="translate(44,200)">
+      <rect width="270" height="300" rx="14" fill="#141826" stroke="#2b3a52"/>
+      <rect x="0" y="0" width="270" height="5" rx="2.5" fill="#45b6f5"/>
+      <circle cx="40" cy="48" r="17" fill="#45b6f5"/>
+      <text x="40" y="54" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0d14">1</text>
+      <text x="72" y="44" class="kicker">Browser</text>
+      <text x="72" y="64" class="step" style="font-size:17px">Submit</text>
+      <text x="24" y="108" class="desc">User builds a digest from:</text>
+      <text x="24" y="140" class="desc">• URLs (one per line, ≤20)</text>
+      <text x="24" y="166" class="desc">• Pasted text blocks</text>
+      <text x="24" y="192" class="desc">• PDF uploads (≤5 · 3 MB)</text>
+      <text x="24" y="218" class="desc">• Optional focus theme</text>
+      <text x="24" y="272" class="note">POST /api/digest · multipart</text>
+    </g>
+
+    <!-- 2: fetch_item -->
+    <g transform="translate(352,200)">
+      <rect width="270" height="300" rx="14" fill="#16152c" stroke="#34305c"/>
+      <rect x="0" y="0" width="270" height="5" rx="2.5" fill="#8b80ff"/>
+      <circle cx="40" cy="48" r="17" fill="#8b80ff"/>
+      <text x="40" y="54" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0d14">2</text>
+      <text x="72" y="44" class="kicker">Task</text>
+      <text x="72" y="65" class="step">fetch_item</text>
+      <text x="24" y="108" class="desc">URL → fetch &amp; strip HTML</text>
+      <text x="24" y="134" class="desc">Text → use as-is</text>
+      <text x="24" y="160" class="desc">PDF → filename placeholder</text>
+      <text x="24" y="200" class="desc">Excerpts the body so the</text>
+      <text x="24" y="220" class="desc">model gets a clean slice.</text>
+      <text x="24" y="272" class="note">STARTER · 120s · 2 RETRIES</text>
+    </g>
+
+    <!-- 3: analyze_item -->
+    <g transform="translate(660,200)">
+      <rect width="270" height="300" rx="14" fill="#16152c" stroke="#34305c"/>
+      <rect x="0" y="0" width="270" height="5" rx="2.5" fill="#8b80ff"/>
+      <circle cx="40" cy="48" r="17" fill="#8b80ff"/>
+      <text x="40" y="54" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0d14">3</text>
+      <text x="72" y="44" class="kicker">Task</text>
+      <text x="72" y="65" class="step">analyze_item</text>
+      <use href="#tg" x="222" y="26" width="30" height="30"/>
+      <text x="24" y="108" class="desc">Together AI answers the</text>
+      <text x="24" y="128" class="desc">four digest questions +</text>
+      <text x="24" y="148" class="desc">read / skim / skip verdict.</text>
+      <text x="24" y="188" class="desc">Diffs the prior Postgres</text>
+      <text x="24" y="208" class="desc">snapshot → what changed.</text>
+      <text x="24" y="272" class="note">STANDARD · 180s · 2 RETRIES</text>
+    </g>
+
+    <!-- 4: synthesize_digest -->
+    <g transform="translate(968,200)">
+      <rect width="270" height="300" rx="14" fill="#16152c" stroke="#34305c"/>
+      <rect x="0" y="0" width="270" height="5" rx="2.5" fill="#8b80ff"/>
+      <circle cx="40" cy="48" r="17" fill="#8b80ff"/>
+      <text x="40" y="54" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0d14">4</text>
+      <text x="72" y="44" class="kicker">Task</text>
+      <text x="72" y="65" class="step" style="font-size:14.5px">synthesize_digest</text>
+      <use href="#tg" x="222" y="26" width="30" height="30"/>
+      <text x="24" y="108" class="desc">Merges every analysis</text>
+      <text x="24" y="128" class="desc">into one summary:</text>
+      <text x="24" y="166" class="desc">• headline</text>
+      <text x="24" y="192" class="desc">• doToday / readNow / skip</text>
+      <text x="24" y="272" class="note">STARTER · 120s · 2 RETRIES</text>
+    </g>
+
+    <!-- 5: Persist + stream -->
+    <g transform="translate(1276,200)">
+      <rect width="270" height="300" rx="14" fill="#101d30" stroke="#3766a8"/>
+      <rect x="0" y="0" width="270" height="5" rx="2.5" fill="#6ea8ff"/>
+      <circle cx="40" cy="48" r="17" fill="#6ea8ff"/>
+      <text x="40" y="54" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0d14">5</text>
+      <text x="72" y="44" class="kicker">Web Service</text>
+      <text x="72" y="64" class="step" style="font-size:16px">Persist &amp; stream</text>
+      <text x="24" y="108" class="desc">Cards stream to the UI as</text>
+      <text x="24" y="128" class="desc">each task completes (SSE).</text>
+      <text x="24" y="168" class="desc">Postgres saves the run +</text>
+      <text x="24" y="188" class="desc">source snapshots for the</text>
+      <text x="24" y="208" class="desc">next digest's diff.</text>
+      <text x="24" y="272" class="note">SSE: status · card · done</text>
+    </g>
+
+    <!-- ===== arrows between cards ===== -->
+    <g>
+      <path d="M314 350 L352 350" stroke="#45b6f5" stroke-width="1.9" fill="none" marker-end="url(#pSky)"/>
+      <text x="333" y="340" text-anchor="middle" class="edge" fill="#8fc8f3">item</text>
+
+      <path d="M622 350 L660 350" stroke="#8b80ff" stroke-width="1.9" fill="none" marker-end="url(#pRender)" class="flow"/>
+      <text x="641" y="340" text-anchor="middle" class="edge" fill="#a99fff">text</text>
+
+      <path d="M930 350 L968 350" stroke="#8b80ff" stroke-width="1.9" fill="none" marker-end="url(#pRender)" class="flow"/>
+      <text x="949" y="340" text-anchor="middle" class="edge" fill="#a99fff">analyses[]</text>
+
+      <path d="M1238 350 L1276 350" stroke="#6ea8ff" stroke-width="1.9" fill="none" marker-end="url(#pPg)" class="flow"/>
+      <text x="1257" y="340" text-anchor="middle" class="edge" fill="#8fbcff">summary</text>
+    </g>
+
+    <!-- per-item loop note under steps 2–3 -->
+    <text x="641" y="528" text-anchor="middle" class="note" style="fill:#6c6f80">fetch + analyze repeat per item before synthesis</text>
+
+    <!-- footer -->
+    <g transform="translate(44,590)">
+      <use href="#tg" x="0" y="-16" width="22" height="22"/>
+      <text x="32" y="0" class="foot">Together AI runs only inside <tspan class="foot" style="fill:#cfd0db;font-weight:600">analyze_item</tspan> and <tspan class="foot" style="fill:#cfd0db;font-weight:600">synthesize_digest</tspan> — the web service holds no model key.</text>
+    </g>
+  </svg>
+</div>
+</body>
+</html>
