@@ -7,7 +7,7 @@ import { digestRouter } from "./routes/digest.js";
 import { healthRouter } from "./routes/health.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const repoRoot = path.join(__dirname, "..");
+const repoRoot = path.join(__dirname, "..", "..");
 const PORT = parseInt(process.env.PORT || "3000", 10);
 const GITHUB_REPO =
   process.env.GITHUB_REPO_URL || "https://github.com/ojusave/read-it-for-me";
