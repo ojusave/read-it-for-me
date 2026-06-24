@@ -45,8 +45,6 @@ The workflow service uses Together AI (default: `meta-llama/Llama-3.3-70B-Instru
 
 ![Architecture diagram](static/images/architecture-diagram.png)
 
-![Pipeline flow](static/images/pipeline-flow.png)
-
 | Layer | Folder | Role |
 |-------|--------|------|
 | UI | `frontend/` | Svelte 5 form, SSE client, digest cards |

@@ -8,26 +8,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet"/>
 <style>
-  html,body{margin:0;padding:0;background:#0b0d14;}
-  .stage{width:1600px;}
-  svg.diagram{display:block;width:1600px;height:auto}
+  html,body{margin:0;padding:0;background:#ffffff;}
+  .stage{width:1500px;}
+  svg.diagram{display:block;width:1500px;height:auto}
 </style>
 </head>
 <body>
 <div class="stage">
-  <svg class="diagram" viewBox="0 0 1600 940" xmlns="http://www.w3.org/2000/svg">
+  <svg class="diagram" viewBox="0 0 1500 820" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <marker id="aSky" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#45b6f5"/></marker>
-      <marker id="aRender" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b80ff"/></marker>
-      <marker id="aOrange" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#ff7a4d"/></marker>
-      <marker id="aPg" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6ea8ff"/></marker>
-      <marker id="aMuted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7d8294"/></marker>
+      <marker id="aInk"  viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3f3f46"/></marker>
+      <marker id="aRen"  viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6c63ff"/></marker>
+      <marker id="aOrg"  viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#ff5b35"/></marker>
+      <marker id="aPg"   viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#4169E1"/></marker>
 
-      <!-- vendor logos (self-contained) -->
-      <symbol id="logoRender" viewBox="0 0 24 24"><path fill="#ffffff" d="m17.1491 1.50583c-2.6812-.1262-4.9358 1.81264-5.3205 4.36717-.0152.11854-.0381.23327-.0571.34799-.5979 3.18169-3.38195 5.59091-6.7258 5.59091-1.19206 0-2.31175-.3059-3.28672-.8413-.11807-.065-.25898.0191-.25898.1529v.6846 10.3137h10.2677v-7.7324c0-1.4226 1.1501-2.5775 2.5669-2.5775h2.5669c2.9059 0 5.2443-2.42069 5.13-5.36528-.1028-2.65013-2.2431-4.8146-4.8824-4.94079z"/></symbol>
-      <symbol id="logoSvelte" viewBox="0 0 24 24"><path fill="#ff5b29" d="M10.354 21.125a4.44 4.44 0 0 1-4.765-1.767 4.109 4.109 0 0 1-.703-3.107 3.898 3.898 0 0 1 .134-.522l.105-.321.287.21a7.21 7.21 0 0 0 2.186 1.092l.208.063-.02.208a1.253 1.253 0 0 0 .226.83 1.337 1.337 0 0 0 1.435.533 1.231 1.231 0 0 0 .343-.15l5.59-3.562a1.164 1.164 0 0 0 .524-.778 1.242 1.242 0 0 0-.211-.937 1.338 1.338 0 0 0-1.435-.533 1.23 1.23 0 0 0-.343.15l-2.133 1.36a4.078 4.078 0 0 1-1.135.499 4.44 4.44 0 0 1-4.765-1.766 4.108 4.108 0 0 1-.702-3.108 3.855 3.855 0 0 1 1.742-2.582l5.589-3.563a4.072 4.072 0 0 1 1.135-.499 4.44 4.44 0 0 1 4.765 1.767 4.109 4.109 0 0 1 .703 3.107 3.943 3.943 0 0 1-.134.522l-.105.321-.286-.21a7.204 7.204 0 0 0-2.187-1.093l-.208-.063.02-.207a1.255 1.255 0 0 0-.226-.831 1.337 1.337 0 0 0-1.435-.532 1.231 1.231 0 0 0-.343.15L8.62 9.368a1.162 1.162 0 0 0-.524.778 1.24 1.24 0 0 0 .211.937 1.338 1.338 0 0 0 1.435.533 1.235 1.235 0 0 0 .344-.151l2.132-1.36a4.067 4.067 0 0 1 1.135-.498 4.44 4.44 0 0 1 4.765 1.766 4.108 4.108 0 0 1 .702 3.108 3.857 3.857 0 0 1-1.742 2.583l-5.589 3.562a4.072 4.072 0 0 1-1.135.499m10.358-17.95C18.484-.015 14.082-.96 10.9 1.068L5.31 4.63a6.412 6.412 0 0 0-2.896 4.295 6.753 6.753 0 0 0 .666 4.336 6.43 6.43 0 0 0-.96 2.396 6.833 6.833 0 0 0 1.168 5.167c2.229 3.19 6.63 4.135 9.812 2.108l5.59-3.562a6.41 6.41 0 0 0 2.896-4.295 6.756 6.756 0 0 0-.665-4.336 6.429 6.429 0 0 0 .958-2.396 6.831 6.831 0 0 0-1.167-5.168Z"/></symbol>
-      <symbol id="logoExpress" viewBox="0 0 24 24"><path fill="#e8e8ee" d="M24 18.588a1.529 1.529 0 01-1.895-.72l-3.45-4.771-.5-.667-4.003 5.444a1.466 1.466 0 01-1.802.708l5.158-6.92-4.798-6.251a1.595 1.595 0 011.9.666l3.576 4.83 3.596-4.81a1.435 1.435 0 011.788-.668L21.708 7.9l-2.522 3.283a.666.666 0 000 .994l4.804 6.412zM.002 11.576l.42-2.075c1.154-4.103 5.858-5.81 9.094-3.27 1.895 1.489 2.368 3.597 2.275 5.973H1.116C.943 16.447 4.005 19.009 7.92 17.7a4.078 4.078 0 002.582-2.876c.207-.666.548-.78 1.174-.588a5.417 5.417 0 01-2.589 3.957 6.272 6.272 0 01-7.306-.933 6.575 6.575 0 01-1.64-3.858c0-.235-.08-.455-.134-.666A88.33 88.33 0 010 11.577zm1.127-.286h9.654c-.06-3.076-2.001-5.258-4.59-5.278-2.882-.04-4.944 2.094-5.071 5.264z"/></symbol>
-      <symbol id="logoPg" viewBox="0 0 24 24"><path fill="#6ea8ff" d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM12.092 14.7307c-.0525.141-.133.3566-.2567.6881-.0767.3149-.2004.6464-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2069.5983z"/></symbol>
+      <symbol id="logoRender" viewBox="0 0 24 24"><path fill="#6c63ff" d="m17.1491 1.50583c-2.6812-.1262-4.9358 1.81264-5.3205 4.36717-.0152.11854-.0381.23327-.0571.34799-.5979 3.18169-3.38195 5.59091-6.7258 5.59091-1.19206 0-2.31175-.3059-3.28672-.8413-.11807-.065-.25898.0191-.25898.1529v.6846 10.3137h10.2677v-7.7324c0-1.4226 1.1501-2.5775 2.5669-2.5775h2.5669c2.9059 0 5.2443-2.42069 5.13-5.36528-.1028-2.65013-2.2431-4.8146-4.8824-4.94079z"/></symbol>
+      <symbol id="logoSvelte" viewBox="0 0 24 24"><path fill="#ff3e00" d="M10.354 21.125a4.44 4.44 0 0 1-4.765-1.767 4.109 4.109 0 0 1-.703-3.107 3.898 3.898 0 0 1 .134-.522l.105-.321.287.21a7.21 7.21 0 0 0 2.186 1.092l.208.063-.02.208a1.253 1.253 0 0 0 .226.83 1.337 1.337 0 0 0 1.435.533 1.231 1.231 0 0 0 .343-.15l5.59-3.562a1.164 1.164 0 0 0 .524-.778 1.242 1.242 0 0 0-.211-.937 1.338 1.338 0 0 0-1.435-.533 1.23 1.23 0 0 0-.343.15l-2.133 1.36a4.078 4.078 0 0 1-1.135.499 4.44 4.44 0 0 1-4.765-1.766 4.108 4.108 0 0 1-.702-3.108 3.855 3.855 0 0 1 1.742-2.582l5.589-3.563a4.072 4.072 0 0 1 1.135-.499 4.44 4.44 0 0 1 4.765 1.767 4.109 4.109 0 0 1 .703 3.107 3.943 3.943 0 0 1-.134.522l-.105.321-.286-.21a7.204 7.204 0 0 0-2.187-1.093l-.208-.063.02-.207a1.255 1.255 0 0 0-.226-.831 1.337 1.337 0 0 0-1.435-.532 1.231 1.231 0 0 0-.343.15L8.62 9.368a1.162 1.162 0 0 0-.524.778 1.24 1.24 0 0 0 .211.937 1.338 1.338 0 0 0 1.435.533 1.235 1.235 0 0 0 .344-.151l2.132-1.36a4.067 4.067 0 0 1 1.135-.498 4.44 4.44 0 0 1 4.765 1.766 4.108 4.108 0 0 1 .702 3.108 3.857 3.857 0 0 1-1.742 2.583l-5.589 3.562a4.072 4.072 0 0 1-1.135.499m10.358-17.95C18.484-.015 14.082-.96 10.9 1.068L5.31 4.63a6.412 6.412 0 0 0-2.896 4.295 6.753 6.753 0 0 0 .666 4.336 6.43 6.43 0 0 0-.96 2.396 6.833 6.833 0 0 0 1.168 5.167c2.229 3.19 6.63 4.135 9.812 2.108l5.59-3.562a6.41 6.41 0 0 0 2.896-4.295 6.756 6.756 0 0 0-.665-4.336 6.429 6.429 0 0 0 .958-2.396 6.831 6.831 0 0 0-1.167-5.168Z"/></symbol>
+      <symbol id="logoExpress" viewBox="0 0 24 24"><path fill="#18181b" d="M24 18.588a1.529 1.529 0 01-1.895-.72l-3.45-4.771-.5-.667-4.003 5.444a1.466 1.466 0 01-1.802.708l5.158-6.92-4.798-6.251a1.595 1.595 0 011.9.666l3.576 4.83 3.596-4.81a1.435 1.435 0 011.788-.668L21.708 7.9l-2.522 3.283a.666.666 0 000 .994l4.804 6.412zM.002 11.576l.42-2.075c1.154-4.103 5.858-5.81 9.094-3.27 1.895 1.489 2.368 3.597 2.275 5.973H1.116C.943 16.447 4.005 19.009 7.92 17.7a4.078 4.078 0 002.582-2.876c.207-.666.548-.78 1.174-.588a5.417 5.417 0 01-2.589 3.957 6.272 6.272 0 01-7.306-.933 6.575 6.575 0 01-1.64-3.858c0-.235-.08-.455-.134-.666A88.33 88.33 0 010 11.577zm1.127-.286h9.654c-.06-3.076-2.001-5.258-4.59-5.278-2.882-.04-4.944 2.094-5.071 5.264z"/></symbol>
       <symbol id="logoTogether" viewBox="0 0 64 64">
         <circle cx="19" cy="21" r="12.5" fill="#c9b6f2"/>
         <circle cx="45" cy="21" r="12.5" fill="#ec4fc4"/>
@@ -37,247 +34,192 @@
         <line x1="32" y1="44" x2="39" y2="33" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
       </symbol>
       <symbol id="logoUser" viewBox="0 0 80 110">
-        <circle cx="40" cy="22" r="15" fill="none" stroke="#45b6f5" stroke-width="3.2"/>
-        <path d="M9 100 Q9 48 40 48 Q71 48 71 100" fill="none" stroke="#45b6f5" stroke-width="3.2" stroke-linecap="round"/>
+        <circle cx="40" cy="22" r="15" fill="none" stroke="#2563eb" stroke-width="3.4"/>
+        <path d="M9 100 Q9 48 40 48 Q71 48 71 100" fill="none" stroke="#2563eb" stroke-width="3.4" stroke-linecap="round"/>
       </symbol>
 
       <style><![CDATA[
         text{font-family:Inter,"Helvetica Neue",Arial,sans-serif;}
-        .h1{font-size:30px;font-weight:700;fill:#f4f4f8}
-        .h2{font-size:15px;font-weight:400;fill:#9b9bab}
-        .zone{font-size:13px;font-weight:700;letter-spacing:0.22em;fill:#7d8294}
-        .panelTitle{font-size:21px;font-weight:600;fill:#f4f4f8}
-        .panelSub{font-size:12.5px;font-weight:400;fill:#9b9bab}
-        .cardTitle{font-size:15px;font-weight:600;fill:#f0f0f5}
-        .cardDesc{font-size:12px;font-weight:400;fill:#9b9bab}
-        .mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-weight:500;fill:#cfd0db}
-        .step{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:16px;font-weight:600;fill:#f0f0f5}
-        .note{font-size:10.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase}
-        .edge{font-size:12px;font-weight:500;fill:#aeb0bd}
-        .edgeStrong{font-size:12px;font-weight:600;fill:#e8e8ee}
+        .h1{font-size:30px;font-weight:700;fill:#18181b}
+        .h2{font-size:15px;font-weight:400;fill:#71717a}
+        .zone{font-size:12.5px;font-weight:700;letter-spacing:0.2em;fill:#a1a1aa}
+        .panelTitle{font-size:20px;font-weight:700;fill:#18181b}
+        .panelSub{font-size:12.5px;font-weight:400;fill:#71717a}
+        .cardTitle{font-size:15px;font-weight:600;fill:#18181b}
+        .cardDesc{font-size:13px;font-weight:400;fill:#52525b}
+        .mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-weight:500;fill:#6c63ff}
+        .step{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:16px;font-weight:600;fill:#18181b}
+        .note{font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;fill:#a1a1aa}
+        .edge{font-size:12.5px;font-weight:500;fill:#71717a}
+        .edgeStrong{font-size:12.5px;font-weight:600;fill:#27272a}
         @keyframes flow { to { stroke-dashoffset:-20; } }
         .flow{stroke-dasharray:6 6;animation:flow 1.4s linear infinite;}
       ]]></style>
     </defs>
 
-    <rect x="0" y="0" width="1600" height="940" fill="#0b0d14"/>
+    <rect x="0" y="0" width="1500" height="820" fill="#ffffff"/>
 
-    <!-- title -->
-    <text x="44" y="50" class="h1">Read It For Me — Architecture</text>
-    <text x="44" y="78" class="h2">The browser streams a digest request; Render Workflows fetch, analyze, and synthesize; Together AI does the inference</text>
+    <text x="44" y="48" class="h1">Read It For Me — Architecture</text>
+    <text x="44" y="76" class="h2">The browser streams a digest request; Render Workflows fetch, analyze, and synthesize; Together AI does the inference.</text>
 
     <!-- zone labels -->
-    <text x="220" y="118" text-anchor="middle" class="zone">CLIENT</text>
-    <text x="810" y="118" text-anchor="middle" class="zone">RENDER</text>
-    <text x="1390" y="118" text-anchor="middle" class="zone">INFERENCE</text>
+    <text x="206" y="116" text-anchor="middle" class="zone">CLIENT</text>
+    <text x="760" y="116" text-anchor="middle" class="zone">RENDER</text>
+    <text x="1300" y="116" text-anchor="middle" class="zone">INFERENCE</text>
 
     <!-- zone containers -->
-    <rect x="44"   y="134" width="352" height="772" rx="18" fill="#0e1119" stroke="#252a39" stroke-width="1.4"/>
-    <rect x="440"  y="134" width="740" height="772" rx="18" fill="#0e1119" stroke="#2c2747" stroke-width="1.4"/>
-    <rect x="1224" y="134" width="332" height="772" rx="18" fill="#0e1119" stroke="#3a2a23" stroke-width="1.4"/>
+    <rect x="44"   y="132" width="324" height="652" rx="16" fill="#fafafa" stroke="#ececef" stroke-width="1.4"/>
+    <rect x="408"  y="132" width="704" height="652" rx="16" fill="#f7f6ff" stroke="#e7e4fb" stroke-width="1.4"/>
+    <rect x="1152" y="132" width="304" height="652" rx="16" fill="#fff7f4" stroke="#fbe2d8" stroke-width="1.4"/>
 
-    <!-- ============ CLIENT (left) ============ -->
-    <g transform="translate(44,134)">
-      <!-- browser header -->
-      <use href="#logoUser" x="26" y="28" width="44" height="60"/>
-      <text x="92" y="56" class="panelTitle">Browser</text>
-      <text x="92" y="78" class="panelSub">Svelte 5 single-page app</text>
-      <use href="#logoSvelte" x="300" y="34" width="26" height="26"/>
+    <!-- ============ CLIENT ============ -->
+    <g transform="translate(44,132)">
+      <use href="#logoUser" x="28" y="34" width="40" height="56"/>
+      <text x="92" y="62" class="panelTitle">Browser</text>
+      <text x="92" y="84" class="panelSub">Svelte 5 single-page app</text>
+      <use href="#logoSvelte" x="276" y="40" width="26" height="26"/>
 
-      <!-- card: digest form -->
-      <g transform="translate(26,118)">
-        <rect width="300" height="176" rx="12" fill="#141826" stroke="#2b3142"/>
-        <rect x="0" y="0" width="5" height="176" rx="2.5" fill="#45b6f5"/>
-        <text x="22" y="34" class="cardTitle">Digest form</text>
-        <text x="22" y="60" class="cardDesc">URLs — one per line (max 20)</text>
-        <text x="22" y="82" class="cardDesc">Pasted text blocks</text>
-        <text x="22" y="104" class="cardDesc">PDF uploads (max 5 · 3 MB)</text>
-        <text x="22" y="126" class="cardDesc">Optional focus theme</text>
-        <text x="22" y="156" class="mono" style="font-size:12px">App.svelte · lib/api.ts</text>
+      <g transform="translate(28,122)">
+        <rect width="268" height="184" rx="12" fill="#ffffff" stroke="#e4e4e7"/>
+        <rect x="0" y="0" width="5" height="184" rx="2.5" fill="#2563eb"/>
+        <text x="22" y="36" class="cardTitle">Build a digest</text>
+        <text x="22" y="66" class="cardDesc">URLs — one per line (≤20)</text>
+        <text x="22" y="92" class="cardDesc">Pasted text blocks</text>
+        <text x="22" y="118" class="cardDesc">PDF uploads (≤5 · 3 MB)</text>
+        <text x="22" y="144" class="cardDesc">Optional focus theme</text>
+        <text x="22" y="170" class="mono" style="font-size:12px">App.svelte · lib/api.ts</text>
       </g>
 
-      <!-- card: live feed -->
-      <g transform="translate(26,318)">
-        <rect width="300" height="176" rx="12" fill="#141826" stroke="#2b3142"/>
-        <rect x="0" y="0" width="5" height="176" rx="2.5" fill="#8b80ff"/>
-        <text x="22" y="34" class="cardTitle">Live results</text>
-        <text x="22" y="60" class="cardDesc">EventSource consumes the SSE</text>
-        <text x="22" y="78" class="cardDesc">stream as tasks run on Render.</text>
-        <text x="22" y="104" class="cardDesc">Activity feed · per-item cards</text>
-        <text x="22" y="122" class="cardDesc">read / skim / skip verdicts</text>
-        <text x="22" y="156" class="mono" style="font-size:12px">ActivityPanel · DigestCard</text>
-      </g>
-
-      <!-- card: verdict legend -->
-      <g transform="translate(26,518)">
-        <rect width="300" height="100" rx="12" fill="#10131e" stroke="#222838"/>
-        <text x="22" y="32" class="cardDesc">Every card answers four questions:</text>
-        <text x="22" y="56" class="mono" style="font-size:12px;fill:#9b9bab">whatChanged · whyCare</text>
-        <text x="22" y="76" class="mono" style="font-size:12px;fill:#9b9bab">whatToDo · worthReading</text>
+      <g transform="translate(28,330)">
+        <rect width="268" height="178" rx="12" fill="#ffffff" stroke="#e4e4e7"/>
+        <rect x="0" y="0" width="5" height="178" rx="2.5" fill="#6c63ff"/>
+        <text x="22" y="36" class="cardTitle">Live results</text>
+        <text x="22" y="64" class="cardDesc">EventSource reads the SSE</text>
+        <text x="22" y="84" class="cardDesc">stream as tasks run.</text>
+        <text x="22" y="116" class="cardDesc">Activity feed + per-item</text>
+        <text x="22" y="136" class="cardDesc">cards · read / skim / skip</text>
+        <text x="22" y="166" class="mono" style="font-size:12px">ActivityPanel · DigestCard</text>
       </g>
     </g>
 
-    <!-- ============ RENDER (center) ============ -->
-    <g transform="translate(440,134)">
-      <use href="#logoRender" x="28" y="32" width="26" height="26"/>
-      <text x="66" y="54" class="panelTitle">Render</text>
-      <text x="66" y="76" class="panelSub">Web Service + Workflows + Postgres</text>
+    <!-- ============ RENDER ============ -->
+    <g transform="translate(408,132)">
+      <use href="#logoRender" x="28" y="40" width="26" height="26"/>
+      <text x="66" y="62" class="panelTitle">Render</text>
+      <text x="66" y="84" class="panelSub">Web Service · Workflows · Postgres</text>
 
-      <!-- Web Service card -->
-      <g transform="translate(26,98)">
-        <rect width="688" height="150" rx="12" fill="#15172a" stroke="#3a3566"/>
-        <rect x="0" y="0" width="5" height="150" rx="2.5" fill="#8b80ff"/>
-        <use href="#logoExpress" x="24" y="24" width="24" height="24"/>
-        <text x="62" y="42" class="cardTitle">Web Service — Express</text>
-        <text x="540" y="40" class="note" fill="#8b80ff">STARTER PLAN</text>
-
-        <g transform="translate(24,66)">
-          <rect width="206" height="64" rx="9" fill="#0f1120" stroke="#2b2c47"/>
-          <text x="16" y="26" class="cardDesc" style="fill:#dfe0ea;font-weight:600">REST + multipart API</text>
-          <text x="16" y="48" class="mono" style="font-size:11px">POST /api/digest · /health</text>
+      <!-- Web Service -->
+      <g transform="translate(28,108)">
+        <rect width="648" height="118" rx="12" fill="#ffffff" stroke="#cdc7f7"/>
+        <rect x="0" y="0" width="5" height="118" rx="2.5" fill="#6c63ff"/>
+        <use href="#logoExpress" x="22" y="22" width="24" height="24"/>
+        <text x="58" y="40" class="cardTitle">Web Service — Express</text>
+        <text x="520" y="38" class="note">STARTER</text>
+        <g transform="translate(22,58)">
+          <rect width="194" height="44" rx="8" fill="#fafafa" stroke="#ececef"/>
+          <text x="14" y="20" class="cardDesc" style="font-weight:600;fill:#27272a">REST + multipart API</text>
+          <text x="14" y="37" class="mono" style="font-size:10.5px">POST /api/digest · /health</text>
         </g>
-        <g transform="translate(242,66)">
-          <rect width="206" height="64" rx="9" fill="#0f1120" stroke="#2b2c47"/>
-          <text x="16" y="26" class="cardDesc" style="fill:#dfe0ea;font-weight:600">SSE Orchestrator</text>
-          <text x="16" y="48" class="mono" style="font-size:11px">startTask · poll · stream</text>
+        <g transform="translate(228,58)">
+          <rect width="194" height="44" rx="8" fill="#fafafa" stroke="#ececef"/>
+          <text x="14" y="20" class="cardDesc" style="font-weight:600;fill:#27272a">SSE Orchestrator</text>
+          <text x="14" y="37" class="mono" style="font-size:10.5px">startTask · poll · stream</text>
         </g>
-        <g transform="translate(460,66)">
-          <rect width="206" height="64" rx="9" fill="#0f1120" stroke="#2b2c47"/>
-          <text x="16" y="26" class="cardDesc" style="fill:#dfe0ea;font-weight:600">Static SPA host</text>
-          <text x="16" y="48" class="mono" style="font-size:11px">serves dist/client</text>
-        </g>
-      </g>
-
-      <!-- dispatch arrow web service -> workflows -->
-      <path d="M370 252 L370 286" stroke="#8b80ff" stroke-width="1.8" fill="none" marker-end="url(#aRender)" class="flow"/>
-      <text x="382" y="274" class="edge" fill="#a99fff">startTask · getTaskRun poll</text>
-
-      <!-- Render Workflows card -->
-      <g transform="translate(26,294)">
-        <rect width="688" height="372" rx="12" fill="#13122a" stroke="#3a3566"/>
-        <use href="#logoRender" x="24" y="22" width="22" height="22"/>
-        <text x="58" y="40" class="cardTitle">Render Workflows</text>
-        <text x="220" y="40" class="panelSub">each task = isolated instance · own retries &amp; timeout · dashboard replay</text>
-
-        <!-- step 1 fetch_item -->
-        <g transform="translate(24,64)">
-          <rect width="640" height="86" rx="10" fill="#191a30" stroke="#34305c"/>
-          <circle cx="34" cy="30" r="15" fill="#8b80ff"/>
-          <text x="34" y="35" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0d14">1</text>
-          <text x="62" y="30" class="step">fetch_item</text>
-          <text x="62" y="54" class="cardDesc">Fetch URL &amp; strip HTML · decode pasted text · PDF placeholder. Excerpts the body.</text>
-          <text x="62" y="74" class="note" fill="#7d8294">STARTER · TIMEOUT 120s · 2 RETRIES · 2× BACKOFF</text>
-        </g>
-
-        <!-- step 2 analyze_item -->
-        <g transform="translate(24,160)">
-          <rect width="640" height="92" rx="10" fill="#191a30" stroke="#34305c"/>
-          <circle cx="34" cy="30" r="15" fill="#8b80ff"/>
-          <text x="34" y="35" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0d14">2</text>
-          <text x="62" y="30" class="step">analyze_item</text>
-          <text x="62" y="54" class="cardDesc">Together AI answers the 4 digest questions + read/skim/skip. Diffs against the</text>
-          <text x="62" y="72" class="cardDesc">prior Postgres snapshot to report what changed.</text>
-          <text x="430" y="30" class="note" fill="#ff8a5c">→ TOGETHER AI</text>
-          <text x="62" y="-2" class="note" fill="#7d8294"></text>
-        </g>
-
-        <!-- step 3 synthesize_digest -->
-        <g transform="translate(24,262)">
-          <rect width="640" height="86" rx="10" fill="#191a30" stroke="#34305c"/>
-          <circle cx="34" cy="30" r="15" fill="#8b80ff"/>
-          <text x="34" y="35" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0d14">3</text>
-          <text x="62" y="30" class="step">synthesize_digest</text>
-          <text x="62" y="54" class="cardDesc">Merges every analysis into one summary: headline + doToday / readNow / skip.</text>
-          <text x="62" y="74" class="note" fill="#7d8294">STARTER · TIMEOUT 120s · 2 RETRIES   ·   → TOGETHER AI</text>
-        </g>
-
-        <!-- vertical chain arrows -->
-        <g stroke="#8b80ff" stroke-width="1.8" fill="none" marker-end="url(#aRender)" class="flow">
-          <path d="M344 150 L344 160"/>
-          <path d="M344 252 L344 262"/>
+        <g transform="translate(434,58)">
+          <rect width="192" height="44" rx="8" fill="#fafafa" stroke="#ececef"/>
+          <text x="14" y="20" class="cardDesc" style="font-weight:600;fill:#27272a">Static SPA host</text>
+          <text x="14" y="37" class="mono" style="font-size:10.5px">serves dist/client</text>
         </g>
       </g>
 
-      <!-- Postgres cylinder -->
-      <g transform="translate(196,694)">
-        <path d="M0 12 L0 60 A 150 11 0 0 0 300 60 L300 12" fill="#101a2b" stroke="#3766a8" stroke-width="1.5"/>
-        <ellipse cx="150" cy="12" rx="150" ry="11" fill="#13233a" stroke="#3766a8" stroke-width="1.5"/>
-        <use href="#logoPg" x="78" y="24" width="22" height="22"/>
-        <text x="110" y="42" class="cardTitle" style="font-size:16px">Render Postgres</text>
-        <text x="150" y="64" text-anchor="middle" class="cardDesc">digest_runs · source_snapshots · digest_items</text>
-      </g>
+      <!-- dispatch arrow -->
+      <path d="M352 226 L352 256" stroke="#6c63ff" stroke-width="1.9" fill="none" marker-end="url(#aRen)" class="flow"/>
+      <text x="364" y="246" class="edge" fill="#6c63ff">startTask · poll getTaskRun</text>
 
-      <!-- workflows <-> postgres edge -->
-      <path d="M250 666 L300 694" stroke="#6ea8ff" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#aPg)"/>
-      <path d="M470 694 L470 666" stroke="#6ea8ff" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#aPg)"/>
-      <text x="360" y="688" text-anchor="middle" class="edge" fill="#8fbcff">snapshot read / write</text>
+      <!-- Render Workflows -->
+      <g transform="translate(28,264)">
+        <rect width="648" height="312" rx="12" fill="#ffffff" stroke="#cdc7f7"/>
+        <use href="#logoRender" x="22" y="20" width="22" height="22"/>
+        <text x="54" y="38" class="cardTitle">Render Workflows</text>
+        <text x="214" y="38" class="panelSub">each task isolated · own timeout &amp; retries · replay</text>
+
+        <g transform="translate(22,58)">
+          <rect width="604" height="72" rx="10" fill="#fafafa" stroke="#e7e4fb"/>
+          <circle cx="34" cy="28" r="15" fill="#6c63ff"/>
+          <text x="34" y="33" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">1</text>
+          <text x="60" y="28" class="step">fetch_item</text>
+          <text x="60" y="52" class="cardDesc">Fetch URL &amp; strip HTML · decode pasted text · PDF placeholder. Excerpts the body.</text>
+        </g>
+        <g transform="translate(22,140)">
+          <rect width="604" height="72" rx="10" fill="#fafafa" stroke="#e7e4fb"/>
+          <circle cx="34" cy="28" r="15" fill="#6c63ff"/>
+          <text x="34" y="33" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">2</text>
+          <text x="60" y="28" class="step">analyze_item</text>
+          <text x="60" y="52" class="cardDesc">4 digest questions + read / skim / skip. Diffs the prior Postgres snapshot.</text>
+          <use href="#logoTogether" x="556" y="20" width="30" height="30"/>
+        </g>
+        <g transform="translate(22,222)">
+          <rect width="604" height="72" rx="10" fill="#fafafa" stroke="#e7e4fb"/>
+          <circle cx="34" cy="28" r="15" fill="#6c63ff"/>
+          <text x="34" y="33" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">3</text>
+          <text x="60" y="28" class="step">synthesize_digest</text>
+          <text x="60" y="52" class="cardDesc">Merges analyses into one summary: headline + doToday / readNow / skip.</text>
+          <use href="#logoTogether" x="556" y="20" width="30" height="30"/>
+        </g>
+
+        <g stroke="#6c63ff" stroke-width="1.9" fill="none" marker-end="url(#aRen)" class="flow">
+          <path d="M40 130 L40 140"/>
+          <path d="M40 212 L40 222"/>
+        </g>
+      </g>
     </g>
 
-    <!-- ============ INFERENCE (right) ============ -->
-    <g transform="translate(1224,134)">
-      <use href="#logoTogether" x="26" y="30" width="30" height="30"/>
-      <text x="68" y="54" class="panelTitle">Together AI</text>
-      <text x="68" y="76" class="panelSub">Called only inside Workflow tasks</text>
+    <!-- ============ INFERENCE ============ -->
+    <g transform="translate(1152,132)">
+      <use href="#logoTogether" x="28" y="38" width="30" height="30"/>
+      <text x="70" y="62" class="panelTitle">Together AI</text>
+      <text x="70" y="84" class="panelSub">Called only by Workflow tasks</text>
 
-      <!-- model card -->
-      <g transform="translate(26,108)">
-        <rect width="280" height="158" rx="12" fill="#1b1410" stroke="#5a3a2a"/>
-        <rect x="0" y="0" width="5" height="158" rx="2.5" fill="#ff5b35"/>
-        <use href="#logoTogether" x="20" y="22" width="40" height="40"/>
-        <text x="76" y="42" class="cardTitle">Llama 3.3 70B</text>
-        <text x="76" y="62" class="cardDesc">Instruct Turbo</text>
-        <text x="22" y="98" class="cardDesc">JSON-mode chat completions,</text>
-        <text x="22" y="116" class="cardDesc">temp 0.2 · schema-validated.</text>
-        <text x="22" y="142" class="mono" style="font-size:12px">workflow/lib/together.ts</text>
+      <g transform="translate(28,122)">
+        <rect width="248" height="170" rx="12" fill="#ffffff" stroke="#fbe2d8"/>
+        <rect x="0" y="0" width="5" height="170" rx="2.5" fill="#ff5b35"/>
+        <use href="#logoTogether" x="22" y="24" width="44" height="44"/>
+        <text x="80" y="46" class="cardTitle">Llama 3.3 70B</text>
+        <text x="80" y="66" class="cardDesc">Instruct Turbo</text>
+        <text x="22" y="104" class="cardDesc">JSON-mode chat completions,</text>
+        <text x="22" y="124" class="cardDesc">temp 0.2 · schema-validated.</text>
+        <text x="22" y="152" class="mono" style="font-size:11.5px;fill:#52525b">workflow/lib/together.ts</text>
       </g>
 
-      <!-- usage card -->
-      <g transform="translate(26,288)">
-        <rect width="280" height="132" rx="12" fill="#141826" stroke="#2b3142"/>
-        <text x="22" y="30" class="cardTitle" style="font-size:14px">Two callers</text>
-        <text x="22" y="56" class="mono" style="font-size:12px;fill:#cfd0db">analyze_item</text>
-        <text x="258" y="56" text-anchor="end" class="cardDesc">4 Qs + verdict</text>
-        <text x="22" y="80" class="mono" style="font-size:12px;fill:#cfd0db">synthesize_digest</text>
-        <text x="258" y="80" text-anchor="end" class="cardDesc">final summary</text>
-        <text x="22" y="110" class="cardDesc">Retries on premature-close / reset</text>
-      </g>
-
-      <!-- key isolation note -->
-      <g transform="translate(26,430)">
-        <rect width="280" height="172" rx="12" fill="#10131e" stroke="#222838" stroke-dasharray="4 4"/>
-        <rect x="18" y="18" width="76" height="22" rx="5" fill="#15172a" stroke="#5a3a2a"/>
-        <text x="56" y="33" text-anchor="middle" class="note" fill="#ff8a5c">KEY SAFETY</text>
-        <text x="20" y="66" class="cardDesc">TOGETHER_API_KEY lives only on</text>
-        <text x="20" y="84" class="cardDesc">the Workflow service. The web</text>
-        <text x="20" y="102" class="cardDesc">service never holds it — it only</text>
-        <text x="20" y="120" class="cardDesc">dispatches tasks and streams.</text>
-        <text x="20" y="150" class="cardDesc" style="fill:#7d8294">Each task pays its own retry budget.</text>
+      <g transform="translate(28,316)">
+        <rect width="248" height="192" rx="12" fill="#fafafa" stroke="#ececef" stroke-dasharray="4 4"/>
+        <rect x="18" y="18" width="92" height="24" rx="6" fill="#fff" stroke="#fbe2d8"/>
+        <text x="64" y="34" text-anchor="middle" class="note" fill="#ff5b35">KEY SAFETY</text>
+        <text x="20" y="70" class="cardDesc">TOGETHER_API_KEY lives only</text>
+        <text x="20" y="90" class="cardDesc">on the Workflow service.</text>
+        <text x="20" y="118" class="cardDesc">The web service just</text>
+        <text x="20" y="138" class="cardDesc">dispatches tasks and streams</text>
+        <text x="20" y="158" class="cardDesc">results — it holds no model key.</text>
       </g>
     </g>
 
     <!-- ===== cross-zone edges ===== -->
-    <!-- browser <-> web service -->
-    <path d="M396 380 L466 380" stroke="#45b6f5" stroke-width="1.8" fill="none" marker-end="url(#aSky)"/>
-    <text x="431" y="368" text-anchor="middle" class="edgeStrong">POST /api/digest</text>
-    <text x="431" y="398" text-anchor="middle" class="edge" fill="#7d8294">multipart</text>
+    <path d="M368 348 L406 348" stroke="#3f3f46" stroke-width="1.9" fill="none" marker-end="url(#aInk)"/>
+    <text x="387" y="336" text-anchor="middle" class="edgeStrong">request</text>
+    <path d="M406 398 L368 398" stroke="#6c63ff" stroke-width="1.9" fill="none" marker-end="url(#aRen)" class="flow"/>
+    <text x="387" y="418" text-anchor="middle" class="edge" fill="#6c63ff">SSE stream</text>
 
-    <path d="M466 430 L396 430" stroke="#8b80ff" stroke-width="1.8" fill="none" marker-end="url(#aRender)" class="flow"/>
-    <text x="431" y="450" text-anchor="middle" class="edge" fill="#a99fff">SSE stream</text>
-
-    <!-- workflows -> together (analyze + synthesize) -->
-    <path d="M1180 540 L1250 540" stroke="#ff7a4d" stroke-width="1.8" fill="none" stroke-dasharray="6 5" marker-end="url(#aOrange)" class="flow"/>
-    <text x="1215" y="528" text-anchor="middle" class="edge" fill="#ff9d78">chat JSON</text>
+    <path d="M1112 446 L1150 446" stroke="#ff5b35" stroke-width="1.9" fill="none" stroke-dasharray="6 5" marker-end="url(#aOrg)" class="flow"/>
+    <text x="1131" y="434" text-anchor="middle" class="edge" fill="#ff5b35">chat JSON</text>
 
     <!-- legend -->
-    <g transform="translate(440,912)">
-      <line x1="0" y1="0" x2="34" y2="0" stroke="#45b6f5" stroke-width="1.8" marker-end="url(#aSky)"/>
-      <text x="44" y="4" class="edge">request</text>
-      <line x1="150" y1="0" x2="184" y2="0" stroke="#8b80ff" stroke-width="1.8" stroke-dasharray="6 6" marker-end="url(#aRender)"/>
-      <text x="194" y="4" class="edge">SSE / dispatch</text>
-      <line x1="340" y1="0" x2="374" y2="0" stroke="#ff7a4d" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#aOrange)"/>
-      <text x="384" y="4" class="edge">inference call</text>
-      <line x1="540" y1="0" x2="574" y2="0" stroke="#6ea8ff" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#aPg)"/>
-      <text x="584" y="4" class="edge">persistence</text>
+    <g transform="translate(408,802)">
+      <line x1="0" y1="0" x2="32" y2="0" stroke="#3f3f46" stroke-width="1.9" marker-end="url(#aInk)"/>
+      <text x="42" y="4" class="edge">request</text>
+      <line x1="150" y1="0" x2="182" y2="0" stroke="#6c63ff" stroke-width="1.9" stroke-dasharray="6 6" marker-end="url(#aRen)"/>
+      <text x="192" y="4" class="edge">SSE / dispatch</text>
+      <line x1="340" y1="0" x2="372" y2="0" stroke="#ff5b35" stroke-width="1.9" stroke-dasharray="6 5" marker-end="url(#aOrg)"/>
+      <text x="382" y="4" class="edge">inference call</text>
     </g>
   </svg>
 </div>
