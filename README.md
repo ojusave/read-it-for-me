@@ -6,7 +6,9 @@ Personal daily digest for links, pasted text, and PDFs. Each item answers what c
 
 [Live demo](https://read-it-for-me.onrender.com/) · [Deploy on Render](https://render.com/deploy) · [Repository](https://github.com/ojusave/read-it-for-me)
 
-Built with Svelte 5, Express, [Render Workflows](https://render.com/docs/workflows), and Render Postgres. Inference by [<img src="static/images/together-ai-logo.png" alt="" height="18" /> Together AI](https://www.together.ai/).
+Built with [<img src="static/images/icons/svelte.svg" alt="" height="16" /> Svelte 5](https://svelte.dev/), [<img src="static/images/icons/express.svg" alt="" height="16" /> Express](https://expressjs.com/), [<img src="static/images/icons/render.svg" alt="" height="16" /> Render Workflows](https://render.com/docs/workflows), and [<img src="static/images/icons/postgresql.svg" alt="" height="16" /> Render Postgres](https://render.com/docs/postgresql).
+
+Inference by [<img src="static/images/together-ai-logo.png" alt="" height="18" /> Together AI](https://www.together.ai/).
 
 ## Table of contents
 
