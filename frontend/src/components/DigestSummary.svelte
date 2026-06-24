@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { DigestResult } from "../lib/api";
+  import { findItemUrl } from "../lib/urls";
 
   let { result }: { result: DigestResult } = $props();
 </script>
@@ -20,7 +21,14 @@
     <h3>Read now</h3>
     <ul>
       {#each result.summary.readNow as item}
-        <li>{item}</li>
+        {@const url = findItemUrl(result.items, item)}
+        <li>
+          {#if url}
+            <a class="summary-link" href={url} target="_blank" rel="noopener noreferrer">{item}</a>
+          {:else}
+            {item}
+          {/if}
+        </li>
       {/each}
     </ul>
   {/if}

@@ -1,7 +1,13 @@
 <script lang="ts">
   import type { ItemAnalysis } from "../lib/api";
+  import { isHttpUrl, urlHostname } from "../lib/urls";
 
   let { card }: { card: ItemAnalysis } = $props();
+
+  const sourceUrl = $derived(isHttpUrl(card.sourceLabel) ? card.sourceLabel : null);
+  const sourceDisplay = $derived(
+    sourceUrl ? urlHostname(sourceUrl) : card.sourceLabel
+  );
 
   const badgeClass = $derived(
     card.worthReading === "read"
@@ -14,8 +20,24 @@
 
 <article class="card">
   <span class={badgeClass}>{card.worthReading}</span>
-  <h3>{card.title}</h3>
-  <p class="source">{card.sourceLabel}</p>
+  <h3>
+    {#if sourceUrl}
+      <a class="card-link" href={sourceUrl} target="_blank" rel="noopener noreferrer">
+        {card.title}
+      </a>
+    {:else}
+      {card.title}
+    {/if}
+  </h3>
+  <p class="source">
+    {#if sourceUrl}
+      <a class="card-link muted" href={sourceUrl} target="_blank" rel="noopener noreferrer">
+        {sourceDisplay}
+      </a>
+    {:else}
+      {card.sourceLabel}
+    {/if}
+  </p>
   <dl>
     <div>
       <dt>What changed?</dt>
