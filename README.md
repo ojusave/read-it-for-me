@@ -1,10 +1,12 @@
 # Read It For Me
 
+[![Read It For Me](static/images/screenshot.png)](https://read-it-for-me.onrender.com/)
+
 Personal daily digest for links, pasted text, and PDFs. Each item answers what changed, why it matters, what to do, and whether it is worth reading fully.
 
 **Stack:** Express (API + SSE) · Svelte 5 (UI) · Render Workflows · Together AI · Render Postgres
 
-[Deploy on Render](https://render.com/deploy) · [Render docs](https://render.com/docs) · [GitHub](https://github.com/ojusave/read-it-for-me)
+[Live demo](https://read-it-for-me.onrender.com/) · [Deploy on Render](https://render.com/deploy) · [Render docs](https://render.com/docs) · [GitHub](https://github.com/ojusave/read-it-for-me)
 
 ## Table of contents
 
@@ -16,7 +18,6 @@ Personal daily digest for links, pasted text, and PDFs. Each item answers what c
 - [Configuration](#configuration)
 - [Operations](#operations)
 - [Project structure](#project-structure)
-- [Local development](#local-development)
 - [Troubleshooting](#troubleshooting)
 
 ## Highlights
@@ -54,7 +55,7 @@ The workflow service uses Together AI (default: `meta-llama/Llama-3.3-70B-Instru
 
 ### Web UI
 
-1. Open the deployed app (or `http://localhost:5173` during local dev with Vite proxy).
+1. Open the deployed app.
 2. Paste URLs, text, optional PDFs, and an optional focus.
 3. Click **Build digest**. Cards appear as each item finishes; the summary panel loads at the end.
 
@@ -118,8 +119,6 @@ The Blueprint does not include the workflow runner. In the Dashboard:
 
 ## Configuration
 
-Copy [`.env.example`](.env.example) for local reference.
-
 ### Web service (`read-it-for-me`)
 
 | Variable | Required | Default | If missing |
@@ -174,21 +173,6 @@ read-it-for-me/
 - UI layout and streaming client: `frontend/src/App.svelte`, `frontend/src/lib/api.ts`
 - Postgres schema: `server/lib/db.ts`
 
-## Local development
-
-Local dev is secondary to Render deployment. Full digest runs need a Workflow service (local or remote), Postgres, and API keys.
-
-```bash
-npm install
-npm run dev              # Express :3000 + Vite :5173 (UI hot reload)
-npm run dev:workflow     # Workflow task runner (separate terminal)
-npm run build            # dist/client + dist/server + dist/workflow
-npm start                # Production-style server
-npm run workflow:start   # Production-style workflow runner
-```
-
-Without `RENDER_API_KEY` and `DATABASE_URL`, the UI and `/health` work; **Build digest** returns 503.
-
 ## Troubleshooting
 
 **`RENDER_API_KEY is not configured`**
@@ -197,7 +181,7 @@ Set the key on the web service. The server starts without it, but digest request
 
 **`DATABASE_URL is not configured`**
 
-Wire Postgres from the Blueprint or set a local connection string. Digest requires persistence for snapshot diffs.
+Wire Postgres from the Blueprint on the web service. Digest requires persistence for snapshot diffs.
 
 **Tasks fail immediately / wrong workflow**
 
