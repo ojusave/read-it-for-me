@@ -1,6 +1,7 @@
 <script lang="ts">
-  import type { AppConfig, DigestResult, ItemAnalysis } from "./lib/api";
+  import type { AppConfig, DigestResult, ItemAnalysis, SseActivityPayload, SseProgressPayload } from "./lib/api";
   import { loadConfig, runDigestStream } from "./lib/api";
+  import ActivityPanel from "./components/ActivityPanel.svelte";
   import DigestCard from "./components/DigestCard.svelte";
   import DigestSummary from "./components/DigestSummary.svelte";
   import Header from "./components/Header.svelte";
@@ -13,6 +14,8 @@
   let running = $state(false);
   let status = $state("");
   let error = $state("");
+  let activities = $state<SseActivityPayload[]>([]);
+  let progress = $state<SseProgressPayload | null>(null);
   let cards = $state<ItemAnalysis[]>([]);
   let result = $state<DigestResult | null>(null);
 
@@ -76,6 +79,8 @@
     error = "";
     cards = [];
     result = null;
+    activities = [];
+    progress = null;
     status = "Starting digest...";
 
     const { urls, text } = splitInput(input);
@@ -91,16 +96,24 @@
       onStatus: (p) => {
         status = p.message;
       },
+      onActivity: (p) => {
+        activities = [...activities, p];
+      },
+      onProgress: (p) => {
+        progress = p;
+      },
       onCard: (p) => {
         cards = [...cards, p];
       },
       onDone: (p) => {
         result = p;
         status = "";
+        progress = null;
         running = false;
       },
       onError: (p) => {
         error = p.message;
+        progress = null;
         running = false;
       },
     });
@@ -142,6 +155,10 @@
           </section>
         {/if}
 
+        {#if running || activities.length}
+          <ActivityPanel {activities} {progress} headline={status} />
+        {/if}
+
         {#if cards.length}
           <div class="cards">
             {#each cards as card}
@@ -165,9 +182,6 @@
           </div>
         {/if}
 
-        {#if status}
-          <p class="status">{status}</p>
-        {/if}
         {#if error}
           <p class="error">{error}</p>
         {/if}

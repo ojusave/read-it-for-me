@@ -36,6 +36,18 @@ export type SseStatusPayload = {
   total?: number;
 };
 
+export type SseActivityPayload = {
+  id: string;
+  message: string;
+  kind?: "info" | "success" | "wait";
+};
+
+export type SseProgressPayload = {
+  task: string;
+  message: string;
+  elapsedSec: number;
+};
+
 export type SseCardPayload = ItemAnalysis & { index: number };
 
 export type SseDonePayload = DigestResult;

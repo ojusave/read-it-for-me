@@ -2,6 +2,8 @@ import type { Response } from "express";
 
 export function writeSse(res: Response, event: string, data: unknown): void {
   res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+  const flush = (res as Response & { flush?: () => void }).flush;
+  flush?.();
 }
 
 export function beginSse(res: Response): void {

@@ -1,9 +1,11 @@
 import type {
   DigestResult,
   ItemAnalysis,
+  SseActivityPayload,
   SseCardPayload,
   SseDonePayload,
   SseErrorPayload,
+  SseProgressPayload,
   SseStatusPayload,
 } from "../../../shared/types";
 
@@ -23,6 +25,8 @@ export async function loadConfig(): Promise<AppConfig> {
 
 export type DigestStreamHandlers = {
   onStatus: (payload: SseStatusPayload) => void;
+  onActivity: (payload: SseActivityPayload) => void;
+  onProgress: (payload: SseProgressPayload) => void;
   onCard: (payload: SseCardPayload) => void;
   onDone: (payload: SseDonePayload) => void;
   onError: (payload: SseErrorPayload) => void;
@@ -71,6 +75,8 @@ function consumeSse(buffer: string, handlers: DigestStreamHandlers): string {
     if (!data) continue;
     const payload = JSON.parse(data);
     if (event === "status") handlers.onStatus(payload);
+    else if (event === "activity") handlers.onActivity(payload);
+    else if (event === "progress") handlers.onProgress(payload);
     else if (event === "card") handlers.onCard(payload);
     else if (event === "done") handlers.onDone(payload);
     else if (event === "error") handlers.onError(payload);
@@ -79,4 +85,4 @@ function consumeSse(buffer: string, handlers: DigestStreamHandlers): string {
   return rest;
 }
 
-export type { ItemAnalysis, DigestResult };
+export type { ItemAnalysis, DigestResult, SseActivityPayload, SseProgressPayload };

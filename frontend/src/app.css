@@ -283,6 +283,84 @@ a {
   color: #374151;
 }
 
+.activity-panel {
+  margin-bottom: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: #fafafa;
+  padding: 1rem 1.125rem;
+}
+
+.activity-head {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.activity-head .elapsed {
+  margin-left: auto;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #6b7280;
+  font-variant-numeric: tabular-nums;
+}
+
+.pulse {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: #6366f1;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+}
+
+.activity-progress {
+  margin: 0 0 0.75rem;
+  font-size: 0.8125rem;
+  color: #6b7280;
+}
+
+.activity-log {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 12rem;
+  overflow-y: auto;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #374151;
+}
+
+.activity-line {
+  padding: 0.2rem 0;
+  border-top: 1px solid #f3f4f6;
+}
+
+.activity-line:first-child {
+  border-top: none;
+}
+
+.activity-line.success {
+  color: #166534;
+}
+
+.activity-line.wait {
+  color: #6b7280;
+}
+
 .error {
   margin: 1rem 0 0;
   padding: 0.75rem 1rem;
