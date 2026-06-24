@@ -68,13 +68,39 @@ a {
   color: #111827;
 }
 
-.nav-icon {
+.github-link {
   display: inline-flex;
-  color: #6b7280;
+  align-items: center;
+  justify-content: center;
+  color: #24292f;
   text-decoration: none;
+  line-height: 0;
 }
 
-.nav-icon:hover {
+.github-link:hover {
+  color: #111827;
+}
+
+.site-footer {
+  border-top: 1px solid #e5e7eb;
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 2rem;
+  text-align: center;
+}
+
+.footer-link {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.footer-link:hover {
   color: #111827;
 }
 

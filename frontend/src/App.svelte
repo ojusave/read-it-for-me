@@ -4,6 +4,7 @@
   import DigestCard from "./components/DigestCard.svelte";
   import DigestSummary from "./components/DigestSummary.svelte";
   import Header from "./components/Header.svelte";
+  import Footer from "./components/Footer.svelte";
 
   let config = $state<AppConfig | null>(null);
   let input = $state("");
@@ -117,11 +118,7 @@
 
 <div class="page">
   {#if config}
-    <Header
-      signupUrl={config.signupNavbar}
-      deployUrl={config.deployUrl}
-      githubRepo={config.githubRepo}
-    />
+    <Header deployUrl={config.deployUrl} githubRepo={config.githubRepo} />
 
     <main class="main">
       <div class="content">
@@ -213,6 +210,8 @@
         </div>
       </form>
     </main>
+
+    <Footer signupUrl={config.signupFooter} />
   {:else if error}
     <main class="main"><p class="error">{error}</p></main>
   {:else}
