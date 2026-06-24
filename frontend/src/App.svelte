@@ -123,5 +123,7 @@
     <Footer githubRepo={config.githubRepo} signupUrl={config.signupFooter} />
   {:else if error}
     <main class="shell"><p class="error">{error}</p></main>
+  {:else}
+    <main class="shell"><p class="status">Loading…</p></main>
   {/if}
 </div>
