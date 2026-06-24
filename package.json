@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Daily digest for links and docs — Express + Svelte + Render Workflows + Together AI",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "vite build && tsc -p tsconfig.server.json",

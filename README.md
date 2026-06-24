@@ -4,9 +4,9 @@
 
 Personal daily digest for links, pasted text, and PDFs. Each item answers what changed, why it matters, what to do, and whether it is worth reading fully.
 
-**Stack:** Express (API + SSE) · Svelte 5 (UI) · Render Workflows · Together AI · Render Postgres
+[Live demo](https://read-it-for-me.onrender.com/) · [Deploy on Render](https://render.com/deploy) · [Repository](https://github.com/ojusave/read-it-for-me)
 
-[Live demo](https://read-it-for-me.onrender.com/) · [Deploy on Render](https://render.com/deploy) · [Render docs](https://render.com/docs) · [GitHub](https://github.com/ojusave/read-it-for-me)
+Built with Svelte 5, Express, [Render Workflows](https://render.com/docs/workflows), and Render Postgres. Inference by [<img src="static/images/together-ai-logo.png" alt="" height="18" /> Together AI](https://www.together.ai/).
 
 ## Table of contents
 
@@ -19,6 +19,7 @@ Personal daily digest for links, pasted text, and PDFs. Each item answers what c
 - [Operations](#operations)
 - [Project structure](#project-structure)
 - [Troubleshooting](#troubleshooting)
+- [License](#license)
 
 ## Highlights
 
@@ -198,3 +199,7 @@ Expected in MVP: `fetch_item` returns placeholder text for PDFs until real extra
 **Stale UI after deploy**
 
 Run `npm run build` before deploy. The web service serves `dist/client`; Vite dev server is not used in production.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
