@@ -1,4 +1,5 @@
 <script lang="ts">
+  /** Single digest item card with read/skim/skip badge and source link. */
   import type { ItemAnalysis } from "../lib/api";
   import { isHttpUrl, urlHostname } from "../lib/urls";
 

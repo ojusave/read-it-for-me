@@ -1,4 +1,5 @@
 <script lang="ts">
+  /** Site header with brand, Deploy to Render button, and GitHub link. */
   import DeployToRenderButton from "./DeployToRenderButton.svelte";
   import GitHubIcon from "./GitHubIcon.svelte";
 

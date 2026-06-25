@@ -1,4 +1,5 @@
 <script lang="ts">
+  /** GitHub Octocat mark for the header repo link. */
   let { size = 20 }: { size?: number } = $props();
 </script>
 

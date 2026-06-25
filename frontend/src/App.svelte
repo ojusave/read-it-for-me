@@ -1,4 +1,5 @@
 <script lang="ts">
+  /** Main page: composer, live activity log, digest cards, and summary. */
   import type { AppConfig, DigestResult, ItemAnalysis, SseActivityPayload, SseProgressPayload } from "./lib/api";
   import { loadConfig, runDigestStream } from "./lib/api";
   import ActivityPanel from "./components/ActivityPanel.svelte";
@@ -21,9 +22,9 @@
 
   const suggestions = [
     {
-      title: "Summarize a newsletter",
-      subtitle: "paste a URL and see what changed",
-      value: "https://example.com/newsletter",
+      title: "Summarize Render docs",
+      subtitle: "paste a docs URL and see what changed",
+      value: "https://render.com/docs/workflows",
     },
     {
       title: "Track product updates",
@@ -33,7 +34,7 @@
     {
       title: "Weekly reading digest",
       subtitle: "paste notes and links from your queue",
-      value: "https://together.ai/demos\nNotes from standup: shipped workflows beta",
+      value: "https://www.together.ai/demos\nNotes from standup: shipped workflows beta",
     },
     {
       title: "Focus on AI infra",
@@ -149,7 +150,7 @@
             <p>
               Drop in links, pasted text, or PDFs. Each item answers what changed, why it
               matters, what to do, and whether it is worth reading fully. Powered by
-              <a href="https://together.ai" target="_blank" rel="noopener noreferrer">Together AI</a>
+              <a href="https://www.together.ai/" target="_blank" rel="noopener noreferrer">Together AI</a>
               on Render Workflows.
             </p>
           </section>
@@ -225,7 +226,7 @@
       </form>
     </main>
 
-    <Footer signupUrl={config.signupFooter} />
+    <Footer signupUrl={config.signupFooter} githubRepo={config.githubRepo} />
   {:else if error}
     <main class="main"><p class="error">{error}</p></main>
   {:else}

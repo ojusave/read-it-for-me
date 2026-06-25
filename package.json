@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "description": "Daily digest for links and docs — Express + Svelte + Render Workflows + Together AI",
+  "homepage": "https://read-it-for-me.onrender.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ojusave/read-it-for-me"
+  },
+  "bugs": {
+    "url": "https://github.com/ojusave/read-it-for-me/issues"
+  },
   "license": "MIT",
   "type": "module",
   "scripts": {

@@ -1,3 +1,4 @@
+/** Together AI adapter: JSON chat completions with retries for Render networking quirks. */
 import Together from "together-ai";
 import { z } from "zod";
 

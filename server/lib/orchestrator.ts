@@ -1,3 +1,4 @@
+/** Digest orchestration: starts Render Workflow tasks and streams live SSE updates. */
 import crypto from "node:crypto";
 import { Render } from "@renderinc/sdk";
 import type {
@@ -98,6 +99,7 @@ async function* runTask<T>(
   const startedAt = Date.now();
   let lastStatus = "";
 
+  // Poll Render until the task finishes; yield activity/progress on each tick.
   while (true) {
     await new Promise((r) => setTimeout(r, POLL_MS));
     const details = await getRender().workflows.getTaskRun(started.taskRunId);
@@ -164,6 +166,7 @@ export async function* runDigest(
       [item]
     );
     let fetched!: { title: string; text: string; sourceLabel: string };
+    // Drain the async generator so activity events reach the client while the task runs.
     while (true) {
       const step = await fetchRunner.next();
       if (step.done) {

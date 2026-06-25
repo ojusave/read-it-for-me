@@ -1,3 +1,4 @@
+/** URL helpers for linking digest cards and summary lines to sources. */
 import type { ItemAnalysis } from "./api";
 
 export function isHttpUrl(value: string): boolean {

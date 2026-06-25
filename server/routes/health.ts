@@ -1,3 +1,4 @@
+/** GET /health liveness probe for Render. */
 import { Router } from "express";
 
 export const healthRouter = Router();

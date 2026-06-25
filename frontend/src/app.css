@@ -91,6 +91,10 @@ a {
   margin: 0 auto;
   padding: 1.25rem 1rem 2rem;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
 }
 
 .footer-link {

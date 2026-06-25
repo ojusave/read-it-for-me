@@ -1,3 +1,4 @@
+/** Server-Sent Events helpers for streaming digest progress to the browser. */
 import type { Response } from "express";
 
 export function writeSse(res: Response, event: string, data: unknown): void {
@@ -14,6 +15,7 @@ export function beginSse(res: Response): void {
     "X-Accel-Buffering": "no",
   });
   res.flushHeaders();
+  // Keep-alive comment so proxies do not buffer the first events.
   res.write(":ok\n\n");
 }
 

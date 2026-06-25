@@ -1,8 +1,15 @@
 <script lang="ts">
+  /** Official Render Deploy to Render button (SVG badge). */
   let { deployUrl }: { deployUrl: string } = $props();
 </script>
 
-<a href={deployUrl} target="_blank" rel="noopener noreferrer" class="deploy-btn">
+<a
+  href={deployUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="deploy-btn"
+  aria-label="Deploy to Render"
+>
   <img
     src="https://render.com/images/deploy-to-render-button.svg"
     alt="Deploy to Render"

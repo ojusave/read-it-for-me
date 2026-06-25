@@ -37,7 +37,7 @@ export const fetchItem = task(
     const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
     const response = await fetch(item.value, {
       signal: controller.signal,
-      headers: { "User-Agent": "ReadItForMe/1.0 (+https://render.com)" },
+      headers: { "User-Agent": "ReadItForMe/1.0 (+https://read-it-for-me.onrender.com/)" },
     });
     clearTimeout(timer);
 

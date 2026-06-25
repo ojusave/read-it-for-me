@@ -1,4 +1,5 @@
 <script lang="ts">
+  /** Live activity log shown while workflow tasks run. */
   import type { SseActivityPayload, SseProgressPayload } from "../../../shared/types";
 
   let {

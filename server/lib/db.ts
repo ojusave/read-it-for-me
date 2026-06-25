@@ -1,3 +1,4 @@
+/** Postgres persistence for digest runs and per-source change snapshots. */
 import pg from "pg";
 import type { DigestSummary, ItemAnalysis } from "../../shared/types.js";
 
@@ -55,6 +56,7 @@ export async function getPriorSnapshot(sourceKey: string): Promise<{
   contentHash: string;
   summary: ItemAnalysis;
 } | null> {
+  // Used by the orchestrator to tell Together AI what changed since the last digest.
   if (!pool) return null;
   const { rows } = await pool.query(
     `SELECT title, content_hash, summary FROM source_snapshots WHERE source_key = $1`,

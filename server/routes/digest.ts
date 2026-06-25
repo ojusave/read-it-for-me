@@ -1,3 +1,4 @@
+/** POST /api/digest: multipart input, SSE output. */
 import { Router } from "express";
 import multer from "multer";
 import fs from "node:fs";
@@ -41,7 +42,7 @@ digestRouter.post("/digest", upload.array("pdfs", 5), async (req, res) => {
   const files = (req.files as Express.Multer.File[] | undefined) ?? [];
   for (const file of files) {
     const buf = fs.readFileSync(file.path);
-    fs.unlinkSync(file.path);
+    fs.unlinkSync(file.path); // Ephemeral upload dir; do not persist on Render disk.
     items.push({
       kind: "pdf",
       filename: file.originalname || "document.pdf",

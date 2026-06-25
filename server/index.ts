@@ -1,3 +1,4 @@
+/** Express entry: serves the Svelte SPA, config API, health check, and digest routes. */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import express from "express";

@@ -1,3 +1,4 @@
+/** Frontend API client and manual SSE parser for /api/digest. */
 import type {
   DigestResult,
   ItemAnalysis,

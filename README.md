@@ -4,7 +4,13 @@
 
 Personal daily digest for links, pasted text, and PDFs. Each item answers what changed, why it matters, what to do, and whether it is worth reading fully.
 
-[Live demo](https://read-it-for-me.onrender.com/) · [Deploy on Render](https://render.com/deploy)
+[Live demo](https://read-it-for-me.onrender.com/)
+
+<p align="left">
+  <a href="https://render.com/deploy?repo=https://github.com/ojusave/read-it-for-me">
+    <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height="28" />
+  </a>
+</p>
 
 Built with [<img src="static/images/icons/svelte.svg" alt="" height="16" /> Svelte 5](https://svelte.dev/), [<img src="static/images/icons/express.svg" alt="" height="16" /> Express](https://expressjs.com/), [<img src="static/images/icons/render.svg" alt="" height="16" /> Render Workflows](https://render.com/docs/workflows), and [<img src="static/images/icons/postgresql.svg" alt="" height="16" /> Render Postgres](https://render.com/docs/postgresql).
 
@@ -78,11 +84,17 @@ Requires `RENDER_API_KEY` and `DATABASE_URL` on the web service. Returns `503` i
 ### Health
 
 ```bash
-curl https://your-service.onrender.com/health
+curl https://read-it-for-me.onrender.com/health
 # {"ok":true}
 ```
 
 ## Deploy on Render
+
+<p align="left">
+  <a href="https://render.com/deploy?repo=https://github.com/ojusave/read-it-for-me">
+    <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height="28" />
+  </a>
+</p>
 
 Primary path: Blueprint for the web service and database, then a manual Workflow service.
 
